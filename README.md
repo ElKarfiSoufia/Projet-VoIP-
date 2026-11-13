@@ -39,12 +39,44 @@ Ce projet implémente une application complète de Voice over IP (VoIP) utilisan
 - pip (gestionnaire de paquets Python)
 - Microphone et haut-parleurs
 
+## 🚀 Test rapide (un seul PC)
+
+Ces étapes permettent de tester un appel entre deux utilisateurs sur une même machine.
+
+```bash
+git clone <URL_DU_DEPOT>
+cd VoIP
+pip install -r requirements.txt
+```
+
+1. **Terminal 1 – serveur SIP :**
+   ```bash
+   python src/server/sip_server.py
+   ```
+2. **Terminal 2 – client A :** `python src/client/gui.py`, puis choisir l'utilisateur **1001**.
+3. **Terminal 3 – client B :** `python src/client/gui.py`, puis choisir l'utilisateur **1002**.
+4. Depuis le client A, appeler **1002** ; décrocher sur le client B.
+
+Comptes de démonstration (définis dans `config/server_config.json`) :
+
+| ID | Mot de passe |
+|------|-----------|
+| 1001 | pass1001 |
+| 1002 | pass1002 |
+| 1003 | pass1003 |
+| 1004 | pass1004 |
+
+> Les clients sont configurés sur `127.0.0.1`. Pour tester entre deux PC, remplacer `server_host` dans `config/client_config.json` par l'IP du PC qui exécute le serveur.
+
+Sous Windows, les scripts `scripts/start_server.bat` et `scripts/start_client.bat` font la même chose.
+
 ## Installation
 
 ### 1. Cloner ou télécharger le projet
 
 ```bash
-cd projet-chaoub
+git clone <URL_DU_DEPOT>
+cd VoIP
 ```
 
 ### 2. Installer les dépendances
