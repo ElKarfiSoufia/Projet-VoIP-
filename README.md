@@ -203,8 +203,7 @@ Set-Location "C:\chemin\projet-chaoub"
 
 ## Structure du Projet
 
-```
-projet-chaoub/
+```/
 ├── src/
 │   ├── client/          # Application client SIP
 │   │   ├── sip_client.py
